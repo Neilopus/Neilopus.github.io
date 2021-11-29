@@ -22,7 +22,7 @@ class Tile
         {
             ctx.fillStyle = tileColor
             ctx.strokeStyle = canvasColor
-            ctx.linedWidth = 5
+            ctx.linewidth = 5
             ctx.fillRect(this.col * tileWidth, this.row * tileHeight, tileWidth, tileHeight)
             ctx.strokeRect(this.col * tileWidth, this.row * tileHeight, tileWidth, tileHeight)
             ctx.font = `${tileWidth * 0.6}px Arial`
@@ -45,7 +45,7 @@ export class GameView
         {
             for(let j = 0; j < d; j++)
             {
-                this.board[i][j] = new Tile(i, j , state[i][j])
+                this.board[i][j] = new Tile(i, j, state[i][j])
                 this.board[i][j].draw()
             }
         }
@@ -56,5 +56,5 @@ export function clickToTail(x, y)
 {
     const j = Math.floor(x / tileWidth)
     const i = Math.floor(y / tileHeight)
-    return [i, j]
+    return [i,j]
 }
